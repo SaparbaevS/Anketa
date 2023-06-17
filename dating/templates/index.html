@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: wheat">
+    <header>
+        <nav class="nav_cont" style="display: flex; justify-content: space-around; align-items: center; font-size: 24px;">
+            <h1>Anketa</h1>
+
+            <div class="collapse">
+                <ul style="list-style: none;">
+                    <li class="nav-item" style="">
+                        <a class="nav-link active" style="text-decoration: none;" aria-current="page" href="http://127.0.0.1:8000/add">Registration</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div style="margin: auto;
+                margin-top: 100px;
+                width: 300px">
+        {% for profile in profiles %}
+        <div style="border: 3px solid black;
+                    margin-bottom: 10px;
+                    text-align: center;">
+            <p>{{ profile }}</p>
+            <p>{{ profile.age }}</p>
+            <p>{{ profile.salary }}</p>
+            <p>
+                <a href="{{ profile.get_absolute_url }}"
+                    style="background-color: green;
+                           color: white;">
+                    Перейти к профилю
+                </a>
+
+            </p>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</body>
+</html>
